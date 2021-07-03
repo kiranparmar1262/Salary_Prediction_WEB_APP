@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Prediction</title>
+    <link rel="icon" href="static/ml_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>    
+    </head>
+  <body>
+      <div class="block">
+          <section class="hero is-dark is-bold">
+              <div class="hero-body">
+                  <div class="container has-text-centered">
+                      <h1 class="title">Employee Salary Predictor</h1>
+                      <h2 class="subtitle">ML Web App</h2>
+                  </div><br>
+                  <div class="container has-text-centered">
+                        <a href="{{url_for('index')}}" class="button is-info is-rounded has-text-centered">Reset</a>
+                        <a href="{{url_for('preview')}}" class="button is-link is-rounded has-text-centered">View Dataset</a>
+                  </div>
+              </div>
+          </section>
+      </div>
+      <article class="">
+          <!-- <div class="message-header">
+              <p>Inputs</p>
+          </div> -->
+                       
+                <div class="card-content">
+                    <form action="/" method="POST">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label for="Experience" class="label">Experience</label>
+                                    <div class="control">
+                                        <input type="number" name="experience" class="input" placeholder="Enter Total Experience" min="0" max="10" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="Test Score" class="label">Test Score</label>
+                                    <div class="control">
+                                        <input type="number" name="test_score" class="input" placeholder="Test Score out of 10" min="0" max="10" step="0.1" required>
+                                    </div>
+                                </div>                                        
+                        
+                                <div class="field">
+                                    <label for="Interview Score" class="label">Interview Score</label>
+                                    <div class="control">
+                                        <input type="number" name="interview_score" class="input" placeholder="Interview Score out of 10" min="0" max="10" step="0.1" required>
+                                    </div>
+                                </div> 
+                                <br>
+                                <button class="button is-primary" type="submit">Predict</button>
+                               
+                      </div>
+
+                    </form>                
+                </div>
+                <br>
+                <div class="field">
+                    <label for="Interview Score" class="label">
+                        {{ prediction_text }}
+                    </label>
+                </div>
+          
+    </article>
+     
+  </body>
+</html>
